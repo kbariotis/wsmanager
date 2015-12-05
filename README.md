@@ -17,10 +17,10 @@ npm i -D wsmanager
 ```
 
 ## Usage
+I am using [ws](https://github.com/websockets/ws)
 
 ```js
 ...
-/* I am using `[ws](https://github.com/websockets/ws)` here */
 
 import wsmanager from "wsmanager"
 
