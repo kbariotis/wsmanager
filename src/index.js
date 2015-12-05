@@ -1,17 +1,15 @@
 import util from "util";
-import EventEmitter from "events";
+import { EventEmitter } from 'events';
 
-class SocketManager {
+class SocketManager extends EventEmitter {
 
   constructor () {
+    super();
+
     this.connections = {}
 
-    /**
-     * Interaction through events
-     */
     this.on('disconnection', this._disconnect)
     this.on('connection', this._connect)
-
   }
 
   /**
@@ -111,7 +109,5 @@ class SocketManager {
   }
 
 }
-
-util.inherits(SocketManager, EventEmitter);
 
 export default new SocketManager()
