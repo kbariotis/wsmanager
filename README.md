@@ -6,7 +6,9 @@
 [![Dependency Status][depstat-image]][depstat-url]
 [![Downloads][download-badge]][npm-url]
 
-> An easy to use WebSocket manager. WSManager keeps an in memory hashmap with all active WS connections and maintains it through out app's lifecycle. WSManager stores different accounts and their connected clients as WebSocket objects that you can retrieve at any time.
+> An easy to use WebSocket manager. 
+
+WSManager keeps an in memory hashmap with all active WS connections and maintains it through out app's lifecycle. WSManager stores different accounts and their connected clients as WebSocket objects that you can retrieve at any time.
 
 ## Install
 
