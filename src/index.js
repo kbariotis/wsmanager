@@ -1,4 +1,4 @@
-import util from "util";
+import util from 'util';
 import { EventEmitter } from 'events';
 
 class SocketManager extends EventEmitter {
