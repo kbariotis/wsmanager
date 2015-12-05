@@ -20,6 +20,7 @@ npm i -D wsmanager
 
 ```js
 ...
+/* I am using `[ws](https://github.com/websockets/ws)` here */
 
 import wsmanager from "wsmanager"
 
@@ -44,6 +45,43 @@ connections.forEach(function(ws){
 ...
 
 ```
+
+## Docs
+
+Add a client to that Account, using a function directly:
+```
+wsmanager.connect(account, socket)
+```
+* account(required): a unique identifier for an account
+* socket(required): a WebSocket object
+
+or using events:
+```
+wsmanager.emit('connection', {account:account, socket:socket})
+```
+
+Remove a client, using a function directly:
+```
+wsmanager.disconnect(account, socket)
+```
+* account(required): a unique identifier for an account
+* socket(required): a WebSocket object
+
+or using events:
+```
+wsmanager.emit('disconnection', {account:account, socket:socket})
+```
+
+Get all connections:
+```
+wsmanager.getConnections()
+```
+
+Get all connections by an Account:
+```
+wsmanager.getConnections(account)
+```
+* account(required): a unique identifier for an account
 
 ## License
 
