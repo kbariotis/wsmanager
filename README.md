@@ -49,36 +49,36 @@ connections.forEach(function(ws){
 ## Docs
 
 Add a client to that Account, using a function directly:
-```
+```js
 wsmanager.connect(account, socket)
 ```
 * account(required): a unique identifier for an account
 * socket(required): a WebSocket object
 
 or using events:
-```
+```js
 wsmanager.emit('connection', {account:account, socket:socket})
 ```
 
 Remove a client, using a function directly:
-```
+```js
 wsmanager.disconnect(account, socket)
 ```
 * account(required): a unique identifier for an account
 * socket(required): a WebSocket object
 
 or using events:
-```
+```js
 wsmanager.emit('disconnection', {account:account, socket:socket})
 ```
 
 Get all connections:
-```
+```js
 wsmanager.getConnections()
 ```
 
 Get all connections by an Account:
-```
+```js
 wsmanager.getConnections(account)
 ```
 * account(required): a unique identifier for an account
