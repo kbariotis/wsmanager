@@ -56,6 +56,5 @@
     "watch": "*"
   },
   "dependencies": {
-    "ws": "^0.8.1"
   }
 }
