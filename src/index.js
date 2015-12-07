@@ -1,5 +1,7 @@
 import util from 'util';
 import { EventEmitter } from 'events';
+import hash from 'object-hash';
+import stringify from 'json-stringify-safe';
 
 class SocketManager extends EventEmitter {
 
@@ -84,7 +86,7 @@ class SocketManager extends EventEmitter {
    */
   _parseKey (conn) {
     try {
-      return conn.upgradeReq.headers['sec-websocket-key'];
+      return hash(stringify(conn));
     } catch (e) {
       throw new Error('Wrong Connection Object');
     }

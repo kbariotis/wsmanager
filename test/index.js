@@ -10,10 +10,9 @@ test('wsmanager', (t) => {
 
   t.throws(function () {
     wsmanager.emit('connection', {
-      identifier: 'test',
       conn: {}
     });
-  }, 'throws exception with wrong object connection');
+  }, 'throws exception with wrong object passed');
 
   wsmanager.emit('connection', {
     identifier: 'test',
@@ -31,10 +30,9 @@ test('wsmanager', (t) => {
 
   t.throws(function () {
     wsmanager.emit('disconnection', {
-      identifier: 'test',
       conn: {}
     });
-  }, 'throws exception with wrong object connection');
+  }, 'throws exception with wrong object passed');
 
   wsmanager.emit('disconnection', {
     identifier: 'test',
@@ -51,7 +49,7 @@ test('wsmanager', (t) => {
   t.equal(0, Object.keys(wsmanager.getConnectionsFrom('test')).length, 'removed a new connection');
 
   t.throws(function () {
-    wsmanager.connect('test', {});
+    wsmanager.connect();
   }, 'throws exception with wrong object connection');
 
   wsmanager.connect('test', {
@@ -66,7 +64,7 @@ test('wsmanager', (t) => {
   t.equal(1, Object.keys(wsmanager.getConnectionsFrom('test')).length, 'added a new connection');
 
   t.throws(function () {
-    wsmanager.disconnect('test', {});
+    wsmanager.disconnect();
 
   }, 'throws exception with wrong object connection');
 
